@@ -45,19 +45,32 @@ a {
 }
 
 #about {
-  background-image: linear-gradient( to bottom, rgb(26, 126, 193, .75), rgba(101, 169, 215, 0.301)), url('./imgs/port.jpg');
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: -moz-linear-gradient( to bottom, rgba(26, 126, 193, .75), rgba(101, 169, 215, 0.301)), url('./imgs/port.jpg'); 
+  background-image: -webkit-linear-gradient( bottom, rgba(26, 126, 193, .75), rgba(101, 169, 215, 0.301)), url('./imgs/port.jpg'); 
+  background-image: linear-gradient( to bottom, rgba(26, 126, 193, .75), rgba(101, 169, 215, 0.301)), url('./imgs/port.jpg');
   filter: contrast(1.7);
   text-shadow: 1px 2px 4px black;
   color: white;
-  background-size: cover;
   height: 100vh;
 }
 
 #drayage {
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size:cover;
+  background-size: cover;  
+  background-repeat: no-repeat;
+  background-image: -moz-linear-gradient(to bottom, rgba(26, 126, 193, .95), rgba(101, 169, 215, 0.6)), url('./imgs/loading.jpg');
+  background-image: -webkit-linear-gradient(to bottom, rgba(26, 126, 193, .95), rgba(101, 169, 215, 0.6)), url('./imgs/loading.jpg');
   background-image: linear-gradient(to bottom, rgba(26, 126, 193, .95), rgba(101, 169, 215, 0.6)), url('./imgs/loading.jpg');
+  
   color: white;
   text-shadow: 1px 2px 4px black;
-  background-size: cover;
   height: 100vh;
 }
 
@@ -81,18 +94,17 @@ a {
 }
 
 #repositioning {
-  background-image: linear-gradient(to top right, rgba(128, 128, 128, .75), rgba(0, 76, 138, .75)),
-                    url('./imgs/containers.jpg');
+  background-image: linear-gradient(to top right, rgba(128, 128, 128, .75), rgba(0, 76, 138, .75)), url('./imgs/containers.jpg');
+  background-image: -webkit-linear-gradient(to top right, rgba(128, 128, 128, .75), rgba(0, 76, 138, .75)), url('./imgs/containers.jpg');
+  background-image: -moz-linear-gradient(to top right, rgba(128, 128, 128, .75), rgba(0, 76, 138, .75)), url('./imgs/containers.jpg');
   background-size: cover;
   filter: contrast(1.9);
-  background-attachment: fixed;
   color: white;
   text-shadow: 1px 1px 1.5px black;
 }
 
 #repositioning fieldset {
   border: 4px ridge white;
-  /* border-style:  */
 }
 
 #opportunities {
@@ -198,29 +210,52 @@ legend {
   text-shadow: 2px 2px 4px black;
 }
 
-#form input {
+.contact-info {
+  font-size: 1.5em;
+}
+
+.contact-item {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.space {
+  margin-right: 10px;
+}
+
+.contact-sub {
+  display: inline;
+}
+
+.address {
+  width: 100%;
+}
+
+#form input, textarea {
+  width: 100%;
   background: #4e4e4e;
   border: none;
-  border-radius: 4pt; 
+  font-size: 1.5em;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 #form ::placeholder {
-  color: white;
+  color: rgba(255, 255, 255, .7);
 }
 
 #form ::-moz-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, .7);
 }
 
 #form :-ms-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, .7);
 }
 
 #form ::-webkit-input-placeholder {
-  color: white;
+  color: rgba(255, 255, 255, .7);
 }
+
 
 #form button {
   background: #4e4e4e;
@@ -228,12 +263,11 @@ legend {
   color: white;
   padding: 8px 12px;
   font-size: 1.5em;
-  border-radius: 4pt;
   cursor: pointer;
 }
 
 #form button:hover {
-  color: greenyellow;
+  color: #c8def2;
 }
 
 footer p{
@@ -274,10 +308,6 @@ footer p{
     padding: 0;
   }
 
-  textarea {
-    max-width: 100%;
-  }
-
   .experts a {
     font-size: 14pt;
   }
@@ -290,8 +320,12 @@ footer p{
     padding: 10px;
   }
 
-  p, ul  {
+  p, ul, .contact-info, #form input, textarea   {
     font-size: 11pt;
+  }
+
+  .contact-info {
+    margin-bottom: 25px;
   }
 
   #repositioning p  {
